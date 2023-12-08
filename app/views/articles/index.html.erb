@@ -1,1 +1,12 @@
 <h1>Hello, World!</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article %></li>
+    <ul>
+      <li><%= article.body[0..10] %></li>
+    </ul>
+  <% end %>
+</ul>
+
+<%= link_to "New Article", new_article_path %>
